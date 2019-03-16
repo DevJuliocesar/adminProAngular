@@ -12,6 +12,7 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { ChartsModule } from 'ng2-charts';
 import { SharedModule } from "../shared/shared.module";
 import { PagesRoutingModule } from './pages-routing.module';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PagesRoutingModule } from './pages-routing.module';
     Survey1Component,
     IncrementComponent,
     GraficoDonaComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     CommonModule,
