@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ServiceModule } from './services/service.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     PagesModule,
     ServiceModule,
+    FormsModule,
     AppRoutingModule,
   ],
   providers: [],
