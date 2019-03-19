@@ -12,7 +12,11 @@ import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 export class BreadcrumbsComponent implements OnInit {
   titulo: string;
 
-  constructor(private router: Router, private title: Title, private meta: Meta) {
+  constructor(
+    private router: Router,
+    private title: Title,
+    private meta: Meta
+  ) {
     this.getDataRoute().subscribe(data => {
       this.titulo = data.titulo;
       this.title.setTitle(this.titulo);
@@ -24,8 +28,7 @@ export class BreadcrumbsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getDataRoute(): Observable<any> {
     return this.router.events.pipe(
@@ -34,5 +37,4 @@ export class BreadcrumbsComponent implements OnInit {
       map((datos: ActivationEnd) => datos.snapshot.data)
     );
   }
-
 }

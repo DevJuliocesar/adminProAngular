@@ -17,16 +17,16 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PagenotfoundComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     PagesModule,
     ServiceModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

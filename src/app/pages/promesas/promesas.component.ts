@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class PromesasComponent implements OnInit {
-
   constructor() {
-    this.contarTres().then((data) => console.log('termino!', data)).catch((e) => console.log('fallo'));
+    this.contarTres()
+      .then(data => console.log('termino!', data))
+      .catch(e => console.log('fallo'));
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   contarTres(): Promise<boolean> {
     return new Promise((resolve, reject) => {
@@ -29,5 +29,4 @@ export class PromesasComponent implements OnInit {
       }, 1000);
     });
   }
-
 }

@@ -14,13 +14,34 @@ const routes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Tablero', description: 'Tablero de pagina' } },
-      { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress', description: 'Progress de pagina' } },
-      { path: 'graficas', component: Survey1Component, data: { titulo: 'Graficas', description: 'Graficas de pagina' } },
-      { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas', description: 'Promesas de pagina' } },
-      { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs', description: 'Rxjs de pagina' } },
       {
-        path: 'account-settings', component: AccountSettingsComponent,
+        path: 'dashboard',
+        component: DashboardComponent,
+        data: { titulo: 'Tablero', description: 'Tablero de pagina' }
+      },
+      {
+        path: 'progress',
+        component: ProgressComponent,
+        data: { titulo: 'Progress', description: 'Progress de pagina' }
+      },
+      {
+        path: 'graficas',
+        component: Survey1Component,
+        data: { titulo: 'Graficas', description: 'Graficas de pagina' }
+      },
+      {
+        path: 'promesas',
+        component: PromesasComponent,
+        data: { titulo: 'Promesas', description: 'Promesas de pagina' }
+      },
+      {
+        path: 'rxjs',
+        component: RxjsComponent,
+        data: { titulo: 'Rxjs', description: 'Rxjs de pagina' }
+      },
+      {
+        path: 'account-settings',
+        component: AccountSettingsComponent,
         data: { titulo: 'Ajustes del tema', description: 'Tablero de pagina' }
       },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
@@ -32,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

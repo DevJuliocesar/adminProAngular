@@ -5,13 +5,12 @@ import { DOCUMENT } from '@angular/common';
   providedIn: 'root'
 })
 export class SettingsService {
-
   ajustes: Ajustes = {
     temaUrl: 'assets/css/colors/default.css',
     tema: 'default'
   };
 
-  constructor(@Inject(DOCUMENT) private _document: Document) { }
+  constructor(@Inject(DOCUMENT) private _document: Document) {}
 
   guardarAjustes() {
     localStorage.setItem('ajustes', JSON.stringify(this.ajustes));

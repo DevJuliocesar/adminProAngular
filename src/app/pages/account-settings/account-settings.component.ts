@@ -7,8 +7,7 @@ import { SettingsService } from './../../services/service.index';
   styles: []
 })
 export class AccountSettingsComponent implements OnInit {
-
-  constructor(public _ajustes: SettingsService) { }
+  constructor(public _ajustes: SettingsService) {}
 
   ngOnInit() {
     this.colocarCheck();
@@ -21,7 +20,7 @@ export class AccountSettingsComponent implements OnInit {
       ref.classList.remove('working');
     }
 
-    this.aplicarCheck(link)
+    this.aplicarCheck(link);
     this._ajustes.aplicarTema(tema);
   }
 
@@ -31,7 +30,7 @@ export class AccountSettingsComponent implements OnInit {
 
   colocarCheck() {
     const selectores: any = document.getElementsByClassName('selector');
-    let tema = this._ajustes.ajustes.tema;
+    const tema = this._ajustes.ajustes.tema;
     for (const ref of selectores) {
       if (ref.getAttribute('data-theme') === tema) {
         this.aplicarCheck(ref);
@@ -40,4 +39,3 @@ export class AccountSettingsComponent implements OnInit {
     }
   }
 }
-
