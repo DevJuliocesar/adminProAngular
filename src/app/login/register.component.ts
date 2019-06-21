@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UsuarioService } from './../services/usuario/usuario.service';
-import { Usuario } from 'src/models/usuario.model';
-import Swal from 'sweetalert2';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { UsuarioService } from "./../services/service.index";
+import { Usuario } from "src/models/usuario.model";
+import Swal from "sweetalert2";
+import { Router } from "@angular/router";
 
 declare function init_plugins();
 // const swal: SweetAlert;
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./login.component.scss"]
 })
 export class RegisterComponent implements OnInit {
   formRegister: FormGroup;
-  constructor(public _usuarioService: UsuarioService) {}
+  constructor(public _usuarioService: UsuarioService, public route: Router) {}
 
   validarPasswords(group: FormGroup) {
     const pass = group.controls.password.value;
@@ -37,10 +38,10 @@ export class RegisterComponent implements OnInit {
     );
 
     this.formRegister.setValue({
-      nombre: 'Julio Cesar',
-      correo: 'jcmaldonadom@ufpso.edu.co',
-      password: '123',
-      password_confirmacion: '1234',
+      nombre: "Julio Cesar",
+      correo: "jcmaldonadom@ufpso.edu.co",
+      password: "123",
+      password_confirmacion: "1234",
       condiciones: true
     });
   }
@@ -48,10 +49,10 @@ export class RegisterComponent implements OnInit {
   registrarUsuario() {
     if (this.formRegister.invalid) {
       Swal.fire({
-        title: 'Advertencia!',
-        text: 'Los campos deben ser correctos',
-        type: 'warning',
-        confirmButtonText: 'Ok'
+        title: "Advertencia!",
+        text: "Los campos deben ser correctos",
+        type: "warning",
+        confirmButtonText: "Ok"
       });
     }
 
@@ -62,7 +63,7 @@ export class RegisterComponent implements OnInit {
     );
 
     this._usuarioService.crearUsuario(usuario).subscribe(datos => {
-      console.table(datos);
+      this.route.navigateByUrl("/login");
     });
 
     console.log(this.formRegister.valid);

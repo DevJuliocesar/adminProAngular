@@ -13,11 +13,12 @@
 .project
 .classpath
 .c9/
-*.launch
+*.launchs
 .settings/
 *.sublime-workspace
 
 # IDE - VSCode
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
