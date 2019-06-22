@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from 'src/models/usuario.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_SERVICE } from './../../config/config';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
@@ -79,6 +79,22 @@ export class UsuarioService {
       map((resp: any) => {
         Swal.fire('Usuario Creado', usuario.email, 'success');
         return resp.usuario;
+      })
+    );
+  }
+
+  actualizarUsuario(usuario: Usuario) {
+    const url = `${URL_SERVICE}/usuario/${usuario._id}`;
+    const header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    };
+
+    return this.http.put(url, usuario, header).pipe(
+      map((resp: any) => {
+        Swal.fire('Usuario Actualizado', usuario.nombre, 'success');
+        const usuarioDB: Usuario = resp.usuario;
+        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+        return true;
       })
     );
   }

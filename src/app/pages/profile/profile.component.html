@@ -4,9 +4,14 @@
       <div class="card-body">
         <h4 class="card-title">Perfi del Usuario</h4>
         <h6 class="card-subtitle">Nombre de Usuario</h6>
-        <form class="form p-t-20">
+        <form
+          class="form p-t-20"
+          ngNativeValidate
+          #f="ngForm"
+          (ngSubmit)="guardar(f.value)"
+        >
           <div class="form-group">
-            <label for="exampleInputuname">User Name</label>
+            <label for="nombre">Nombre</label>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ti-user"></i></span>
@@ -14,13 +19,15 @@
               <input
                 type="text"
                 class="form-control"
-                id="exampleInputuname"
-                placeholder="Username"
+                [ngModel]="usuario.nombre"
+                name="nombre"
+                placeholder="Nombre"
+                required
               />
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="exampleInputEmail1">Correo</label>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ti-email"></i></span>
@@ -28,9 +35,11 @@
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
-                placeholder="Enter email"
-                aria-label="Correo"
+                [ngModel]="usuario.email"
+                name="email"
+                placeholder="Correo"
+                [disabled]="usuario.google"
+                required
               />
             </div>
           </div>
@@ -59,7 +68,7 @@
             </div>
             <button
               type="button"
-              class="btn btn-success waves-effect waves-light m-r-10"
+              class="btn btn-block btn-success waves-effect waves-light m-r-10"
             >
               <i class="fa fa-save"></i>
               Actualizar Foto
