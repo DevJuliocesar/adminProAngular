@@ -8,6 +8,7 @@ import { Survey1Component } from './survey1/survey1.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { LoginGuardGuard } from '../services/service.index';
 
@@ -46,6 +47,11 @@ const routes: Routes = [
         path: 'account-settings',
         component: AccountSettingsComponent,
         data: { titulo: 'Ajustes del tema', description: 'Tablero de pagina' }
+      },
+      {
+        path: 'perfil',
+        component: ProfileComponent,
+        data: { titulo: 'Perfil de Usuario' }
       },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
