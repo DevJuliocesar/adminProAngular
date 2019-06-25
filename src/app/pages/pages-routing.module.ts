@@ -11,6 +11,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { ProfileComponent } from './profile/profile.component';
 
 import { LoginGuardGuard } from '../services/service.index';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,12 @@ const routes: Routes = [
         path: 'perfil',
         component: ProfileComponent,
         data: { titulo: 'Perfil de Usuario' }
+      },
+      // Mantenimiento
+      {
+        path: 'usuarios',
+        component: UsuariosComponent,
+        data: { titulo: 'Mantenimiento de Usuarios' }
       },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]

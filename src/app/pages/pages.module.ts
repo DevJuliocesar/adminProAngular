@@ -10,9 +10,11 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 import { IncrementComponent } from '../components/increment/increment.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 import { PipesModule } from '../pipes/pipes.module';
 import { SharedModule } from '../shared/shared.module';
@@ -31,7 +33,9 @@ import { ChartsModule } from 'ng2-charts';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ModalUploadComponent,
+    UsuariosComponent
   ],
   imports: [
     CommonModule,

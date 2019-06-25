@@ -77,6 +77,16 @@ export class UsuarioService {
       );
   }
 
+  cargarUsuarios(desde: number) {
+    const url = `${URL_SERVICE}/usuario?skip=${desde}`;
+    return this.http.get(url);
+  }
+
+  buscarUsuarios(termino: String) {
+    const url = `${URL_SERVICE}/busqueda/coleccion/usuarios/${termino}`;
+    return this.http.get(url).pipe(map((res: any) => res.usuarios));
+  }
+
   crearUsuario(usuario: Usuario) {
     const url = URL_SERVICE + '/usuario';
 
@@ -97,8 +107,29 @@ export class UsuarioService {
     return this.http.put(url, usuario, header).pipe(
       map((resp: any) => {
         Swal.fire('Usuario Actualizado', usuario.nombre, 'success');
-        const usuarioDB: Usuario = resp.usuario;
-        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+
+        if (usuario._id === this.usuario._id) {
+          const usuarioDB: Usuario = resp.usuario;
+          this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+        }
+
+        return true;
+      })
+    );
+  }
+
+  borrarUsuario(id: string) {
+    const url = `${URL_SERVICE}/usuario/${id}`;
+    const header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    };
+    return this.http.delete(url, header).pipe(
+      map((res: any) => {
+        Swal.fire(
+          'Eliminado!',
+          `El usuario ${res.usuario.nombre} ha sido eliminado`,
+          'success'
+        );
         return true;
       })
     );
