@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { LoginGuardGuard } from '../services/service.index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
 
 const routes: Routes = [
   {
@@ -54,11 +55,21 @@ const routes: Routes = [
         component: ProfileComponent,
         data: { titulo: 'Perfil de Usuario' }
       },
-      // Mantenimiento
+      // Gestión
       {
         path: 'usuarios',
         component: UsuariosComponent,
-        data: { titulo: 'Mantenimiento de Usuarios' }
+        data: { titulo: 'Gestión de Usuarios' }
+      },
+      {
+        path: 'hospitales',
+        component: HospitalesComponent,
+        data: { titulo: 'Gestión de hospitales' }
+      },
+      {
+        path: 'medicos',
+        component: HospitalesComponent,
+        data: { titulo: 'Gestión de Médicos' }
       },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]

@@ -11,6 +11,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
 
 import { IncrementComponent } from '../components/increment/increment.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
@@ -35,7 +36,8 @@ import { ChartsModule } from 'ng2-charts';
     RxjsComponent,
     ProfileComponent,
     ModalUploadComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    HospitalesComponent
   ],
   imports: [
     CommonModule,
