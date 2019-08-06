@@ -12,6 +12,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
 
 import { IncrementComponent } from '../components/increment/increment.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PagesRoutingModule } from './pages-routing.module';
 
 import { ChartsModule } from 'ng2-charts';
+import { MedicoComponent } from './medicos/medico.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ChartsModule } from 'ng2-charts';
     ProfileComponent,
     ModalUploadComponent,
     UsuariosComponent,
-    HospitalesComponent
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent
   ],
   imports: [
     CommonModule,

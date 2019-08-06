@@ -13,6 +13,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginGuardGuard } from '../services/service.index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 const routes: Routes = [
   {
@@ -68,8 +70,13 @@ const routes: Routes = [
       },
       {
         path: 'medicos',
-        component: HospitalesComponent,
+        component: MedicosComponent,
         data: { titulo: 'Gestión de Médicos' }
+      },
+      {
+        path: 'medico/:id',
+        component: MedicoComponent,
+        data: { titulo: 'Actualizar Médico' }
       },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
