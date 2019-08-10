@@ -88,8 +88,7 @@ export class HospitalesComponent implements OnInit {
     });
   }
 
-  mostrarModal(id: string) {
-    this._modalUploadService.id = id;
-    this._modalUploadService.tipo = 'hospitales';
+  editarFoto(id: string) {
+    this._modalUploadService.mostrarModal('hospitales', id);
   }
 }

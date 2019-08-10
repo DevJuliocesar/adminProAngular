@@ -42,8 +42,8 @@
           <tbody>
             <tr *ngFor="let hospital of hospitales">
               <td scope="row text-center">
-                <img [src]="hospital.img | imagen: 'hospital'" (click)="mostrarModal(hospital._id)"
-                  class="img-50 img-circle  pointer" data-toggle="modal" data-target="#upload-image" />
+                <img [src]="hospital.img | imagen: 'hospital'" (click)="editarFoto(hospital._id)"
+                  class="img-50 img-circle  pointer" />
               </td>
               <td>
                 <input type="text" class="form-control" name="nombre" [(ngModel)]="hospital.nombre" />

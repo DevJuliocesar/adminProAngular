@@ -13,7 +13,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <button type="button" class="btn btn-primary float-right" (click)="crearMedico()" btn-lg btn-block>
+        <button type="button" class="btn btn-primary float-right" [routerLink]="['/medico', 'nuevo']" btn-lg btn-block>
           <i class="fa fa-plus" aria-hidden="true"></i>
           Crear Médico
         </button>
@@ -37,10 +37,10 @@
                 <img [src]="medico.img | imagen: 'medico' " alt="imagen médico" class="img-50 img-circle pointer">
               </td>
               <td>{{medico.nombre}}</td>
-              <td>{{medico.hospital}}</td>
+              <td>{{medico.hospital.nombre}}</td>
               <td>
-                <button type="button" class="btn btn-primary" (click)="guardarMedico(medico)">
-                  <i class="fa fa-save"></i>
+                <button type="button" class="btn btn-primary" [routerLink]="['/medico', medico._id]">
+                  <i class="fa fa-edit"></i>
                 </button>
                 <button type="button" class="btn btn-danger" (click)="borrarMedico(medico)">
                   <i class="fa fa-trash" aria-hidden="true"></i>

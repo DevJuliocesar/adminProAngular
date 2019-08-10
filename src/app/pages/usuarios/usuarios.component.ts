@@ -86,8 +86,7 @@ export class UsuariosComponent implements OnInit {
     });
   }
 
-  mostrarModal(id: string) {
-    this._modalUploadService.id = id;
-    this._modalUploadService.tipo = 'usuarios';
+  editarFoto(id: string) {
+    this._modalUploadService.mostrarModal('usuarios', id);
   }
 }
