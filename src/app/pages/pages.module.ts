@@ -24,6 +24,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 
 import { ChartsModule } from 'ng2-charts';
 import { MedicoComponent } from './medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MedicoComponent } from './medicos/medico.component';
     UsuariosComponent,
     HospitalesComponent,
     MedicosComponent,
-    MedicoComponent
+    MedicoComponent,
+    BusquedaComponent
   ],
   imports: [
     CommonModule,

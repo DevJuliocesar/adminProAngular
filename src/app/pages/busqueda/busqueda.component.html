@@ -1,0 +1,67 @@
+<div class="row">
+  <div *ngIf="usuarios" class="col-lg-4 col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Usuarios</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios" [routerLink]="['/usuarios']" class="pointer">
+              <td><img class="img-50 img-circle" [src]="usuario.img | imagen:'usuario'"></td>
+              <td>{{usuario.nombre}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="hospitales" class="col-lg-4 col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Hospitales</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hospital of hospitales" [routerLink]="['/hospitales']" class="pointer">
+              <td><img class="img-50 img-circle" [src]="hospital.img | imagen:'hospital'"></td>
+              <td>{{hospital.nombre}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="medicos" class="col-lg-4 col-sm-12 col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Medicos</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of medicos" [routerLink]="['/medicos']" class="pointer">
+              <td><img class="img-50 img-circle" [src]="medico.img | imagen:'medico'"></td>
+              <td>{{medico.nombre}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
